@@ -7,11 +7,6 @@ It helps users track income, expenses, spending categories, and manage finances 
 
 ## ✨ Features
 
-### 🔐 User & Security
-- Login system with predefined credentials
-- Logout support
-- Can be extended to Firebase or online accounts later
-
 ### 💰 Transactions
 - Add income and expenses
 - Categorize transactions (Food, Transport, Bills, etc.)
