@@ -41,17 +41,6 @@ It helps users track income, expenses, spending categories, and manage finances 
 | SQLite (sqflite) | Local offline database |
 | path_provider | DB storage path |
 | Material 3 Design | UI components |
-
----
-
-## 📷 Screenshots *(optional placeholders)*
-
-| Dashboard | Add Transaction | Transactions List |
-|-----------|----------------|------------------|
-| *(screenshot here)* | *(screenshot here)* | *(screenshot here)* |
-
-> To add screenshots, put images inside `/assets/screenshots/` and update links.
-
 ---
 
 ## 🗄 Database Structure (SQLite)
@@ -83,8 +72,8 @@ git clone https://github.com/Suckll/Budget-Planner-Software.git
 cd Budget-Planner-Software
 flutter pub get
 flutter run
-
-
+```
+---
 lib/
  ├─ main.dart
  ├─ src/
