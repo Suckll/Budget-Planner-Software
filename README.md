@@ -73,7 +73,8 @@ cd Budget-Planner-Software
 flutter pub get
 flutter run
 ```
----
+## File Structure
+```sh
 lib/
  ├─ main.dart
  ├─ src/
