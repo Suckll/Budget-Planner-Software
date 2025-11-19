@@ -135,7 +135,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold), 
                 ),
                 TextButton(
                   onPressed: () =>

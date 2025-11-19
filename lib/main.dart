@@ -19,6 +19,7 @@ class BudgetApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Budget App',
+      
       initialRoute: '/login',
       routes: {
         '/login' : (_) => const LoginPage(),
