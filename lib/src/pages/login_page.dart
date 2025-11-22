@@ -94,6 +94,21 @@ class _LoginPageState extends State<LoginPage> {
                   child: const Text("Login", style: TextStyle(fontSize: 18)),
                 ),
               ),
+              SizedBox(height: 16),
+              SizedBox(
+                height: 40,
+                width: 225,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/register");
+                  },
+                  style: ElevatedButton.styleFrom(),
+                  child: const Text(
+                    "Not Registered ? Sign up now!",
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
