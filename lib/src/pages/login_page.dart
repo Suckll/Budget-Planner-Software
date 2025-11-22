@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/src/db/app_db.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,18 +11,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _username = TextEditingController();
   final _password = TextEditingController();
-
-  Map<String, String> login = {'dani': '1234', 'Moe': '9764', 'riyad': '1029'};
-
-  void _login(String username, String password) {
-    if (login.containsKey(username) && login[username] == password) {
-      Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Wrong username or password")),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,8 +71,40 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    _login(_username.text.trim(), _password.text.trim());
+                  //Check db for login credentials
+                  onPressed: () async {
+                    final username = _username.text.trim();
+                    final password = _password.text;
+
+                    if (username.isEmpty || password.isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Please fill all fields")),
+                      );
+                      return;
+                    }
+
+                    final user = await AppDb.instance.loginUser(
+                      username,
+                      password,
+                    );
+
+                    if (user != null) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Login Successful")),
+                      );
+
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        "/",
+                        (route) => false,
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Incorrect Username or Password"),
+                        ),
+                      );
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 14),
