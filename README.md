@@ -75,9 +75,10 @@ lib/
  ├─ src/
  │   ├─ db/app_db.dart              # SQLite database helper
  │   ├─ pages/
- │   │   ├─ dashboard_page.dart
  │   │   ├─ add_transaction_page.dart
- │   │   ├─ transactions_page.dart
- │   │   └─ login_page.dart
+ │   │   ├─ dashboard_page.dart
+ │   │   ├─ login_page.dart
+ │   │   ├─ registerpage.dart
+ │   │   └─ add_transaction_page.dart
  │   ├─ utils/money.dart            # currency formatting
  │   ├─ services/notifications.dart # (optional)
